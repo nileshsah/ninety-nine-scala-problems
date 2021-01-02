@@ -10,4 +10,6 @@ object P04 {
     case Nil => 0
     case _ :: tail => 1 + length(tail)
   }
+
+  // def length[A](as: List[A]): Int = as.foldRight(0) { (_, c) => c + 1 }
 }
