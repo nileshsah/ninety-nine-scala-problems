@@ -8,6 +8,9 @@ package com.solutions
 //    res0: Int = 2
 
 object P03 {
-  def nth[A](n: Int, as: List[A]): Option[A] =
-    if (n < as.length) Option(as(n)) else Option.empty
+  def nth[A](n: Int, as: List[A]): Option[A] = (n, as) match {
+    case (_, Nil) => Option.empty
+    case (0, h :: _) => Option(h)
+    case (n, _ :: tail) => nth(n - 1, tail)
+  }
 }
